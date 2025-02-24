@@ -152,8 +152,17 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n           \"movieName\": \"Up\",\n           \"email\": \"sebastian_patinop@hotmail.com\"\n         }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:3000/reservations/Inception",
+					"raw": "http://localhost:3000/reservations/f3f87653-da83-4e5d-8ada-6e677c1f7f0b",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -161,7 +170,7 @@
 					"port": "3000",
 					"path": [
 						"reservations",
-						"Inception"
+						"f3f87653-da83-4e5d-8ada-6e677c1f7f0b"
 					]
 				}
 			},
@@ -182,6 +191,25 @@
 					"path": [
 						"movies",
 						"c59831ee-fc6e-4517-8116-15f702b2a94c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener datos reporte",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"info"
 					]
 				}
 			},
