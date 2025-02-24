@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "74228ec9-a5cd-4840-972d-75fdae7e3bec",
+		"name": "CineYa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22899369"
+	},
+	"item": [
+		{
+			"name": "crear pelicula",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Titanic\",\n    \"genre\": \"Drama, Romance\",\n    \"duration\": 195,\n    \"classification\": \"PG-13\",\n    \"desc\": \"Durante las labores de recuperación de los restos del famoso Titanic, una anciana norteamericana se pone en contacto con la expedición para acudir a una plataforma flotante instalada en el Mar del Norte y asistir 'in situ' a la recuperación de sus recuerdos. A través de su memoria reviviremos los acontecimientos que marcaron el siniestro más famoso del siglo XX.\",\n    \"poster\": \"https://media.themoviedb.org/t/p/w600_and_h900_bestv2/VMOt5scbGmBKDvkfHjZN6Ki54i.jpg\"\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:3000/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener peliculas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear reserva",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n           \"movie\": \"Avatar\",\n           \"room\": \"Sala 7\",\n           \"schedule\": \"2025-02-24T20:00:00\",\n           \"seats\": [\"A1\", \"A2\"],\n           \"email\": \"vninochacon@gmail.com\"\n         }"
+				},
+				"url": {
+					"raw": "http://localhost:3000/reservations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reservations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener reservas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/reservations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reservations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear Sala",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n           \"name\": \"Sala Dinamix\",\n           \"capacity\": 60\n         }"
+				},
+				"url": {
+					"raw": "http://localhost:3000/rooms",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rooms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener Salas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rooms",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rooms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar reserva",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/reservations/Inception",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reservations",
+						"Inception"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar pelicula",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/movies/c59831ee-fc6e-4517-8116-15f702b2a94c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"movies",
+						"c59831ee-fc6e-4517-8116-15f702b2a94c"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
