@@ -76,25 +76,36 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete("/:id", async (req, res) => {
     try {
         const { id } = req.params;
+        const { movieName, email } = req.body;
 
         if (!id) {
-            return res.status(400).json({ error: 'El ID de la reserva es obligatorio.' });
+            return res.status(400).json({ error: "El ID de la reserva es obligatorio." });
         }
 
+        if (!movieName || !email) {
+            return res.status(400).json({ error: "El nombre de la película y el correo son obligatorios." });
+        }
         const params = {
             TableName: TABLE_NAME,
             Key: { id }
         };
 
         await dynamoDB.delete(params).promise();
+        const emailContent = `
+            Reserva Cancelada
+            Tu reserva para la película ${movieName} ha sido cancelada exitosamente.
+        `;
 
-        res.json({ message: 'Reserva eliminada exitosamente.' });
+        await sendEmail(email, "Confirmación de Cancelación", emailContent);
+
+        res.json({ message: "Reserva eliminada exitosamente y correo enviado." });
+
     } catch (error) {
-        console.error('Error al eliminar la reserva:', error);
-        res.status(500).json({ error: 'Error al eliminar la reserva' });
+        console.error("Error al eliminar la reserva:", error);
+        res.status(500).json({ error: "Error al eliminar la reserva" });
     }
 });
 
